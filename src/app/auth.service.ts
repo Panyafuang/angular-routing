@@ -1,16 +1,17 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   loggedIn = false;
+  // loggedIn = true;
 
   isAuthenticated() {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(this.loggedIn);
-      }, 800)
+      }, 800);
     });
 
     return promise;
@@ -23,5 +24,4 @@ export class AuthService {
   logout() {
     this.loggedIn = false;
   }
-
 }
